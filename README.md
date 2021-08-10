@@ -1,34 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Repair Order Tracker App
 
-## Getting Started
+This is the webpage and server for the front end. See DEVHELP.md for specifics on running the app.
 
-First, run the development server:
+----
+
+This is going to be where I try to describe what the hell im doing.
+
+## The idea:
+
+A coworker was "promoted" to team leader and is having a hard time keeping track of the hundreds of repair orders (ROs) that go through the shop in a week. This makes things like keeping the teams labor balanced and time management a pain in the ass.
+
+I want this app to be able to store 2 - 3 months worth of ROs and any that are active, allow him, and anyone, to be able to easily see what there is, where it is and how the team is doing.
+
+Now, one would think this is something easy and should be built into what ever app is used by the dealership to manage all of this in the first place. Well one would be `wrong`. If it exists, we plebian technicians dont get access to it. Besides, after using these apps, i doubt if the managers get access to anything that usefull.
+
+## How this is going to work:
+
+The basics of a database access and management system is the essentials and after that basic foundation is layed, things like charting and predictive suggestions are future plans.
+
+> First things first, the `Database`. Its a MongoDB running on [Atlas](https://www.mongodb.com/cloud/atlas) so the database host is not an issue. traffic wont be that big and if things get too busy or slow it down too much, i can upgrade the clusters.
+
+> The database `API`. The plan is ASP .NET 5.0 running in a docker container, hosted...somewere. Not sure where or how thats going to work yet. ASP .NET is still new to me and certain stuff like [Mongoose](https://mongoosejs.com/docs/) doesnt have an equivalent (that im aware of), which means im building all the relational requirements of the database by hand.
+
+> The `Front-End`: This is not too bad. Its [Next.js](https://nextjs.org/docs/getting-started) with TypeScript. Things like documentation arent a big deal. Info is pretty easy to come by. Probably going to use [Netlify](https://www.netlify.com/products/workflow/) for hosting. Theres not much more to say. Im not going to use [Material-UI](https://material-ui.com/) or something similar. This is a good oportunity to learn how to create modern GUIs with CSS and my own two hands.
+
+### The Current Feature List:
+
+- Store modify and recall data from the database
+- Assign techs to a repair order, connect jobs to that repair order, and store the repair orders in a pay period.
+- Track total labor hours from the completed jobs and display it in an intuitive and clear way.
+- Keep a rolling history of work completed by a team.
+
+### The Current Technologies:
+
+* React
+* Next.js
+* Express
+* Auth0
+* Typescript
+* MongoDB
+* Atlas
+* Docker
+* ASP .NET
+* C#
+
+#### Theres no timeline. I don't know when this will be done.
+
+----
+
+### Running the dev environment:
+
+
+- Pull the repository from github
+- run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
 ```
+- Open [http://localhost:3000](http://localhost:3000) with your browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Deplyment:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+When I know how to deploy this bad boi, this is where the walkthrough will be.
